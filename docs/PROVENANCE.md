@@ -12,8 +12,8 @@ The conversation contains user-pasted Claude answers and two uploaded archives. 
 
 ## Original artifacts
 
-- `archive/files.zip`: original first script and figure.
-- `archive/files_(1).zip`: original second script, figure, and console output.
+- `archive/doublet_lsf_expt.zip`: original first script and figure.
+- `archive/doublet_fit_expt.zip`: original second script, figure, and console output.
 
 Archives are byte-preserved. Figure copies initially come directly from those archives. Runnable script copies replace the `/mnt/user-data/outputs/` save path with repository-relative `figures/` and add pathlib setup. Numerical algorithms are unchanged.
 
