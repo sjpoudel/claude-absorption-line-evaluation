@@ -1,0 +1,47 @@
+========================================================================
+CONFIGURATION
+ truth: tau0=4.0, b=10.0 km/s, C_f=1, W_tau=sqrt(pi) tau0 b=70.8982 km/s
+ LSF FWHM=15.0 km/s (sigma=6.370); pixel=5.0 km/s; window=+-300 km/s; 120 pixels
+ pixels per resolution element = 3.00; SNR/res.el.=30.0; SNR/pixel=17.321; sigma_pix=0.0577
+ independent resolution elements across window = 40
+
+========================================================================
+FORWARD-MODEL CHECKS
+ truth grid dv=0.05 strong: kernel sum=1.000000000000  edges=1.000000000000/1.000000000000  EW intrinsic=26.397304  convolved=26.397304 (+4.6e-15)  pixel-binned=26.397304 (+2.6e-15)
+ truth grid dv=0.05 weak  : kernel sum=1.000000000000  edges=1.000000000000/1.000000000000  EW intrinsic=19.726887  convolved=19.726887 (+6.1e-15)  pixel-binned=19.726887 (+3.6e-15)
+ fit grid   dv=0.50 strong: kernel sum=1.000000000000  edges=1.000000000000/1.000000000000  EW intrinsic=26.397304  convolved=26.397304 (+2.2e-15)  pixel-binned=26.397304 (+3.8e-15)
+ fit grid   dv=0.50 weak  : kernel sum=1.000000000000  edges=1.000000000000/1.000000000000  EW intrinsic=19.726887  convolved=19.726887 (+2.7e-15)  pixel-binned=19.726887 (+5.2e-15)
+ discretization difference (fit grid vs truth grid), max |dI| = 5.56e-05
+
+========================================================================
+NOISELESS RECOVERY  (numerical recovery; formal sigma = forecast for S/N=30)
+ start (2.0, 8.0)     -> tau0=3.998639  b=10.001335  chi2=2.255e-06  nfev=9
+ start (0.5, 3.0)     -> tau0=3.998639  b=10.001335  chi2=2.255e-06  nfev=10
+ start (10.0, 30.0)   -> tau0=3.998639  b=10.001335  chi2=2.255e-06  nfev=12
+ start (30.0, 5.0)    -> tau0=3.998639  b=10.001335  chi2=2.255e-06  nfev=15
+ start (4.0, 10.0)    -> tau0=3.998639  b=10.001335  chi2=2.255e-06  nfev=5
+ fractional error  tau0: -3.40e-04   b: +1.33e-04   W_tau: -2.07e-04
+ this is a numerical error (optimizer + 0.5 vs 0.05 km/s grid), NOT a statistical uncertainty
+ Fisher forecast at S/N=30:  sigma(tau0)=0.561 (14.0%)  sigma(b)=0.619 km/s (6.2%)  corr=-0.886  sigma(W_tau)=6.388 km/s (9.0%)
+
+ Direct C_f formula on NOISELESS pixels: n_used=10  median=0.6393  min=0.2185  max=0.9320
+   central pixels (v=[ 2.5 -2.5]): C=[0.93197988 0.93197988]  (true C_f = 1; deviation is systematic, set by LSF)
+
+========================================================================
+MONTE CARLO: 1000 noise realizations at S/N=30 per resolution element
+ fit convergence/interior-of-bounds: 1000/1000
+ chi2/dof: mean=0.998  (expected 1.000+-0.092 per realization; std over MC=0.089)
+ tau0     truth=   4.000 | mean=   4.080 median=   4.003 [16,84]=[3.525,4.609] | MC std=0.591 | median formal sigma=0.558 | pull mean=-0.116 std=0.959 | |pull|<1: 70.2%
+ b[km/s]  truth=  10.000 | mean=   9.997 median=   9.990 [16,84]=[9.374,10.625] | MC std=0.613 | median formal sigma=0.620 | pull mean=-0.013 std=0.979 | |pull|<1: 67.9%
+ W_tau    truth=  70.898 | mean=  71.738 median=  70.853 [16,84]=[65.607,77.742] | MC std=6.647 | median formal sigma=6.397 | pull mean=-0.087 std=0.940 | |pull|<1: 73.7%
+ correlation(tau0,b): formal median=-0.886; MC sample=-0.860
+ Gaussian reference for |pull|<1 is 68.3%
+
+ DIRECT PIXEL-LEVEL C_f FORMULA on the same noisy data (true C_f = 1)
+  pixels passing depth mask per realization: median 14; pixels with nonphysical denominator (<=0): mean 5.31 per realization
+  median-over-pixels C:  mean=0.744  std=0.111  [16,50,84]=[0.629 0.751 0.851]  (noiseless value 0.639)
+  central-pixel C:       mean=0.966  std=0.107  [16,50,84]=[0.875 0.949 1.047]  (noiseless value 0.932)
+  fraction of realizations with median C < 0.9: 93.0%;  central C < 0.9: 25.9%
+  => offset from 1 persists at infinite S/N (systematic, LSF);  scatter is the statistical part
+
+ single realization #0: tau0=4.796+-0.803, b=9.308+-0.612, chi2/dof=0.954

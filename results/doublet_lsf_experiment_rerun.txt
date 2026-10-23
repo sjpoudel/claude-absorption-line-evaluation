@@ -1,0 +1,24 @@
+=== CHECKS ===
+LSF kernel sum                      : 1.000000000000
+Intrinsic max|Iw - sqrt(Is)|        : 1.110e-16  (machine precision expected)
+Continuum at window edges (obs)     : strong 1.000000000000/1.000000000000, weak 1.000000000000/1.000000000000
+Window half-width / b, / sigma_LSF  : 40, 62.8
+EW strong intrinsic 26.397304  observed 26.397304  rel. diff +6.19e-15  (km/s)
+EW weak   intrinsic 19.726887  observed 19.726887  rel. diff +8.28e-15  (km/s)
+Min intrinsic Is, Iw                : 0.0183, 0.1353
+Min observed  Is, Iw                : 0.0983, 0.2632
+Observed deviation Iw - sqrt(Is)    : min -0.0761, max +1.11e-16
+Pixels used for C_f (depth>=10%)      : 933 of 16001
+Apparent C_f (intrinsic)            : min 1.000000
+Apparent C_f (observed)             : min 0.1927, at v=0: 0.9493
+Deviation at v=0 (observed)         : -0.0503  (Iw_o=0.2632, sqrt(Is_o)=0.3135)
+Jensen sign check (Iw_o <= sqrt(Is_o) everywhere): True
+
+=== SWEEP: minimum apparent C_f from LSF alone (true C_f = 1) ===
+tau0_strong | FWHM/b=0.25 FWHM/b=0.50 FWHM/b=1.00 FWHM/b=1.50 FWHM/b=2.00
+        0.5 |       0.939       0.804       0.566       0.446       0.393
+        1.0 |       0.913       0.731       0.444       0.319       0.265
+        2.0 |       0.888       0.666       0.357       0.240       0.192
+        4.0 |       0.864       0.608       0.294       0.193       0.155
+        8.0 |       0.841       0.558       0.251       0.167       0.137
+       16.0 |       0.818       0.511       0.222       0.150       0.126
