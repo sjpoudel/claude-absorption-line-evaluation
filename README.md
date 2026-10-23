@@ -1,6 +1,6 @@
 # Evaluating Claude with absorption-line spectroscopy
 
-**Suraj Poudel — exploratory scientific AI evaluation, October 2026**
+**Dr. Suraj Poudel — exploratory scientific AI evaluation, October 2026**
 
 Can an AI assistant distinguish physical partial covering from an instrumental effect in absorption doublets? This repository documents an introductory, AI-assisted investigation: questioning Claude about absorption-line inference, auditing its answers, and asking it to generate controlled numerical experiments.
 
